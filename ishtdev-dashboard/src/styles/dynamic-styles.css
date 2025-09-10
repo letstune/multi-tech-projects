@@ -1,0 +1,206 @@
+/* Dynamic styles for charts and indicators */
+
+/* Crowd level indicators */
+.crowd-indicator[data-level="low"] {
+  background-color: #10b981; /* green-500 */
+}
+
+.crowd-indicator[data-level="medium"] {
+  background-color: #f59e0b; /* amber-500 */
+}
+
+.crowd-indicator[data-level="high"] {
+  background-color: #ef4444; /* red-500 */
+}
+
+.crowd-indicator[data-level="critical"] {
+  background-color: #dc2626; /* red-600 */
+}
+
+/* Crowd level background variants (with opacity) */
+.crowd-bg[data-level="low"] {
+  background-color: rgba(16, 185, 129, 0.125); /* green-500 with 20% opacity */
+}
+
+.crowd-bg[data-level="medium"] {
+  background-color: rgba(245, 158, 11, 0.125); /* amber-500 with 20% opacity */
+}
+
+.crowd-bg[data-level="high"] {
+  background-color: rgba(239, 68, 68, 0.125); /* red-500 with 20% opacity */
+}
+
+.crowd-bg[data-level="critical"] {
+  background-color: rgba(220, 38, 38, 0.125); /* red-600 with 20% opacity */
+}
+
+/* Progress bars with different widths */
+.progress-bar-10 { width: 10%; }
+.progress-bar-20 { width: 20%; }
+.progress-bar-25 { width: 25%; }
+.progress-bar-30 { width: 30%; }
+.progress-bar-40 { width: 40%; }
+.progress-bar-50 { width: 50%; }
+.progress-bar-60 { width: 60%; }
+.progress-bar-70 { width: 70%; }
+.progress-bar-75 { width: 75%; }
+.progress-bar-80 { width: 80%; }
+.progress-bar-85 { width: 85%; }
+.progress-bar-90 { width: 90%; }
+.progress-bar-95 { width: 95%; }
+.progress-bar-100 { width: 100%; }
+
+/* Chart heights for analytics */
+.chart-height-10 { height: 10%; }
+.chart-height-20 { height: 20%; }
+.chart-height-30 { height: 30%; }
+.chart-height-40 { height: 40%; }
+.chart-height-50 { height: 50%; }
+.chart-height-60 { height: 60%; }
+.chart-height-70 { height: 70%; }
+.chart-height-80 { height: 80%; }
+.chart-height-90 { height: 90%; }
+.chart-height-100 { height: 100%; }
+
+/* Dynamic positioning using CSS custom properties */
+.dynamic-position {
+  left: var(--pos-x, 0%);
+  top: var(--pos-y, 0%);
+}
+
+/* Dynamic colors using CSS custom properties */
+.dynamic-color {
+  color: var(--text-color, inherit);
+}
+
+.dynamic-bg-color {
+  background-color: var(--bg-color, transparent);
+  color: var(--text-color, inherit);
+  border: 1px solid var(--border-color, transparent);
+}
+
+/* Enhanced card styling */
+.dashboard-card {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Status indicators */
+.status-active {
+  background-color: #10b981;
+  color: white;
+}
+
+.status-inactive {
+  background-color: #6b7280;
+  color: white;
+}
+
+.status-warning {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.status-error {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* Loading animations */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Pulse animation for live data */
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Smooth scrolling for containers */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .dashboard-card {
+    margin-bottom: 1rem;
+  }
+
+  .grid-responsive {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .text-responsive {
+    font-size: 0.875rem;
+  }
+
+  .padding-responsive {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-card {
+    padding: 1rem;
+  }
+
+  .text-responsive {
+    font-size: 0.75rem;
+  }
+
+  .padding-responsive {
+    padding: 0.75rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .dashboard-card {
+    box-shadow: none;
+    border: 1px solid #e5e7eb;
+  }
+
+  body {
+    background: white !important;
+  }
+}
